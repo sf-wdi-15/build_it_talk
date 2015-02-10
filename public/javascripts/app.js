@@ -1,4 +1,15 @@
-var TodoApp = angular.module("TodoApp", []);
+var TodoApp = angular.module("TodoApp", [
+  "ngRoute"
+]);
+
+TodoApp.config(["$routeProvider", "$locationProvider",
+  function ($routeProvider, $locationProvider){
+    $routeProvider.
+      when("/", {
+        templateUrl: "views/root.html",
+        controller: "TodosCtrl"
+      });
+  }])
 
 TodoApp.controller("TodosCtrl", ["$scope", function ($scope) {
   $scope.todos    = [];

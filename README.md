@@ -305,16 +305,85 @@ make sure you have the `viewport` settings for bootstrap in your head.
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Simple Todo</todo>
+    <title>Simple Todo</title>
 
 ```
 
 
+## Add Routing
+
+* First we added our router `ngRoute` module to our application.
+  
+
+  ```javascript
+  var TodoApp = angular.module("TodoApp", [
+    "ngRoute"
+  ]);
+  ```
+
+* Next we need to configure our router to render views for certain routes.
+
+  ```javascript
+
+  TodoApp.config(["$routeProvider", "$locationProvider",
+    function ($routeProvider, $locationProvider) {
+      $routeProvider.
+        when("/", {
+          templateUrl: "views/root.html",
+          controller: "TodosCtrl"
+        }); 
+    }]);
+  ```
+
+* Lastly we refactor our `index.html` to have the `ng-view` directive render our todos.
+  
+  `view/root.html`
+
+  ```html
+
+      <form ng-submit="addTodo()">
+        <div>
+          <textarea ng-model="newTodo.content"></textarea>
+        </div>
+        <div>
+          <button>Add Todo</button>
+        </div>
+      </form>
+
+      <div>
+        <div ng-repeat="todo in todos track by $index">
+          <div ng-hide="editing">
+            {{todo.content}}
+          </div>
+
+          <form ng-submit="update()" ng-show="editing">
+            <textarea ng-model="todo.content"></textarea>
+            <div>
+              <button>Update</button>
+            </div>
+          </form>
+
+          <div ng-hide="editing">
+            <button ng-click="delete()">Delete</button><button ng-click="edit()">Edit</button>
+          </div>
+        </div>
+
+      </div>
 
 
+  ```
 
+* We want to refactor our `index.html` to look like the following
 
+  ```html
 
+  <body ng-app="TodoApp">
+
+    <div class="container">
+      <ng-view></ng-view>
+    </div>
+  </body>
+  ```
 
 
 

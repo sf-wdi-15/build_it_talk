@@ -1,0 +1,30 @@
+    <div ng-controller="TodosCtrl">
+      <form ng-submit="addTodo()">
+        <div>
+          <textarea ng-model="newTodo.content"></textarea>
+        </div>
+        <div>
+          <button>Add Todo</button>
+        </div>
+      </form>
+      <div>
+
+        <div ng-repeat="todo in todos track by $index">
+          <div ng-hide="editing">
+            {{todo.content}}
+          </div>
+
+          <form ng-submit="update()" ng-show="editing">
+            <textarea ng-model="todo.content"></textarea>
+            <div>
+              <button>Update</button>
+            </div>
+          </form>
+
+          <div ng-hide="editing">
+            <button ng-click="delete()">Delete</button><button ng-click="edit()">Edit</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
