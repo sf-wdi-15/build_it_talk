@@ -64,8 +64,8 @@ Let's setup the basics for our `index.html`.
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Simple Todo</title>
     
-    <script src="/bower_components/angular/angular.js"></script>
-    <script src="/bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="public/javascripts/app.js"></script>
   </head>
   <body>
