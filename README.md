@@ -285,6 +285,53 @@ You might want to add a readme with a link to your github page.
 
 
 
+## Add Bootstrap
+
+First install
+
+```bash
+$ bower install bootstrap --save
+```
+
+and  in our `index.html` in your head...
+
+```html
+<link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+```
+
+make sure you have the `viewport` settings for bootstrap in your head.
+
+```html
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Simple Todo</todo>
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
