@@ -258,6 +258,9 @@ Go view your application at [localhost:8000](localhost:8000). Be sure to run `py
 
 ## Deploying To GitHub pages
 
+To make a github page we need to do the following.
+
+
 ```
 git add . -A
 git commit -m "simple todo app"
@@ -267,7 +270,7 @@ git checkout master
 git push origin master
 ```
 
-
+You might want to add a readme with a link to your github page.
 
 
 
