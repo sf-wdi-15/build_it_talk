@@ -5,14 +5,20 @@ var TodoApp = angular.module("TodoApp", [
 TodoApp.config(["$routeProvider", "$locationProvider",
   function ($routeProvider, $locationProvider){
     $routeProvider.
+      when("/cool_todos", {
+        templateUrl: "views/root.html",
+        controller: "TodosCtrl"
+      }).
       when("/", {
         templateUrl: "views/root.html",
         controller: "TodosCtrl"
       });
   }])
 
-TodoApp.controller("TodosCtrl", ["$scope", function ($scope) {
-  $scope.todos    = [];
+TodoApp.service("Todos", Array);
+
+TodoApp.controller("TodosCtrl", ["$scope", "Todos", function ($scope, Todos) {
+  $scope.todos    = Todos;
   $scope.newTodo  = {};
 
   $scope.addTodo  = function () {
