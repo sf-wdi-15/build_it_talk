@@ -1,0 +1,22 @@
+{
+  "name": "build_it_talk",
+  "version": "0.0.0",
+  "homepage": "https://github.com/DelmerGA/build_it_talk",
+  "authors": [
+    "Delmer Reed <delmer814@yahoo.com>"
+  ],
+  "description": "a build talk",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.13",
+    "angular-route": "~1.3.13"
+  }
+}
