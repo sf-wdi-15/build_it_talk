@@ -254,6 +254,17 @@ Let' try adding an edit form to our view to edit the todo.
 </body>
 ```
 
+Let's add the update functionality
+
+```javascript
+
+$scope.update = function (){
+ this.editing = false;
+};
+```
+
+
+
 Go view your application at [localhost:8000](localhost:8000). Be sure to run `python -m SimpleHTTPServer`.
 
 ## Deploying To GitHub pages
