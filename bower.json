@@ -1,11 +1,11 @@
 {
-  "name": "build_it_talk",
+  "name": "Andy Pohl",
   "version": "0.0.0",
   "homepage": "https://github.com/DelmerGA/build_it_talk",
   "authors": [
-    "Delmer Reed <delmer814@yahoo.com>"
+    "Andy Pohl <"
   ],
-  "description": "a build talk",
+  "description": "A simple todo app",
   "license": "MIT",
   "private": true,
   "ignore": [

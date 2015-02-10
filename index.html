@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Simple Todo</title>
+
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-route/angular-route.js"></script>
+    <script src="public/javascripts/app.js"></script>
+  </head>
+  <body ng-app="TodoApp">
+    
+    <div ng-controller="TodosCtrl">
+      
+      <h1>Simple Todo List</h1>
+
+      <form ng-submit="addTodo()">
+        <div>
+          <textarea ng-model="newTodo.content"></textarea>
+        </div>
+        <div>
+          <button>Add Todo</button>
+        </div>
+      </form>
+
+    <div ng-repeat="todo in todos track by $index">
+      <div ng-hide="editing">
+        {{todo.content}}
+      </div>
+
+      <form ng-submit="update()" ng-show="editing">
+        <textarea ng-model="todo.content"></textarea>
+        <div>
+          <button>UPDATE</button>
+        </div>
+      </form>
+
+      <div ng-hide="editing">
+        <button ng-click="delete()">DELETE</button><button ng-click="edit()">EDIT</button>
+      </div>
+    </div>
+
+  </div>
+
+  </body>
+</html>
